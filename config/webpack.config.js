@@ -28,16 +28,10 @@ const config = {
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              outputPath: 'images/',
-              publicPath: 'images/',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
       },
     ],
   },

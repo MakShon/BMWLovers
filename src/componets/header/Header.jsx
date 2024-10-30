@@ -1,15 +1,15 @@
-import { useState } from 'react'; // Import useState
 import { CiCirclePlus } from 'react-icons/ci';
 import { IoIosLogOut } from 'react-icons/io';
-import { LuUserPlus2 } from 'react-icons/lu'; // Uncommented this import
+import { LuUserPlus2 } from 'react-icons/lu';
 
 import defaultAvatar from '../../assets/images/avatarDefault.jpg';
+import { useAuthContext } from '../../providers/AuthProvider';
 import Button from '../button/Button';
 import Logo from '../logo/Logo';
 import { ButtonsContainer, HeaderContainer } from './styles';
 
 const Header = () => {
-  const [isAuthorized /*, setIsAuthorized*/] = useState(true);
+  const { isAuth, signOut } = useAuthContext();
 
   const handleLoginClick = () => {
     window.location.href = '/sign-in';
@@ -31,13 +31,13 @@ const Header = () => {
     <HeaderContainer>
       <Logo onClick={handleLogoClick} />
       <ButtonsContainer>
-        {isAuthorized ? (
+        {isAuth ? (
           <>
             <Button onClick={handleAskAQuestionClick}>
               <CiCirclePlus size={17} />
               Ask a question
             </Button>
-            <Button primary={false}>
+            <Button primary={false} onClick={signOut}>
               <IoIosLogOut size={17} />
               Logout
             </Button>

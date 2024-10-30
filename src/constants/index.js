@@ -34,6 +34,14 @@ export const questionsData = [
     name: 'Alice Johnson',
     timeLeft: '4 hours ago',
   },
+  {
+    id: 5,
+    title: 'How to fetch data using React hooks?',
+    description: 'I need help understanding the best practices for fetching data in React using hooks.',
+    avatarUrl: avatarDefault,
+    name: 'Alice Johnson',
+    timeLeft: '4 hours ago',
+  },
 ];
 
 export const answersData = [

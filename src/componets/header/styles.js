@@ -16,4 +16,11 @@ export const HeaderContainer = styled.header`
 export const ButtonsContainer = styled.div`
   display: flex;
   gap: 16px;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  align-items: center;
 `;

@@ -31,7 +31,7 @@ const QuestionPage = () => {
           ))}
         </ListContainer>
       </QuestionContainer>
-      <ProfileDisplay />
+      <ProfileDisplay>{question.name}</ProfileDisplay>
     </ContentContainer>
   );
 };

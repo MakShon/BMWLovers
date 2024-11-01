@@ -2,7 +2,7 @@ import { AnswerContainer, Avatar, Description, Name, TimeLeft, Title, UserInfoCo
 
 const Answer = ({ answer }) => {
   return (
-    <AnswerContainer>
+    <AnswerContainer data-cy={'answer'}>
       <UserInfoContainer>
         <Avatar src={answer.avatarUrl} alt="User Avatar" />
         <div>

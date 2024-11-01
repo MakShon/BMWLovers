@@ -13,15 +13,30 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import commands.js using ES2015 syntax:
 import '@cypress/code-coverage/support';
 import './commands';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
 import { mount } from 'cypress/react18';
+import { MemoryRouter } from 'react-router-dom';
+
+import { AuthProvider } from '../../src/providers/AuthProvider';
+import { SearchProvider } from '../../src/providers/SearchProvider';
 
 Cypress.Commands.add('mount', mount);
+
+// Custom command to mount a component with necessary providers
+Cypress.Commands.add('mountWithProviders', (component, { route = '/' } = {}) => {
+  const wrapped = (
+    <MemoryRouter initialEntries={[route]}>
+      <AuthProvider>
+        <SearchProvider>{component}</SearchProvider>
+      </AuthProvider>
+    </MemoryRouter>
+  );
+  return mount(wrapped);
+});
+
+Cypress.Commands.add('getByDataCy', (selector) => cy.get(`[data-cy=${selector}]`));
 // Cypress.Commands.add('myCustomMount', mount);
 
 // Example use:

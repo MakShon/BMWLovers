@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom';
 
 import { ListContainer } from '../componets/list/List';
 import Question from '../componets/question/Question';
-import { questionsData } from '../constants';
+import useQuestions from '../hooks/useQuestions';
 import { useSearch } from '../providers/SearchProvider';
 
 const Home = () => {
   const { query } = useSearch();
-  const filteredQuestions = questionsData.filter((item) => item.title.includes(query));
+  const { questions } = useQuestions();
+  const filteredQuestions = questions.filter((item) => item.title.includes(query));
   if (!filteredQuestions.length) {
     return (
       <img

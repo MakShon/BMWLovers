@@ -4,15 +4,17 @@ const Question = ({ question, isTruncate }) => {
   return (
     <QuestionContainer>
       <UserInfoContainer>
-        <Avatar src={question.avatarUrl} alt="User Avatar" />
+        <Avatar src={question.avatarUrl} alt="User Avatar" data-cy="avatar" />
         <div>
-          <Name>{question.name}</Name>
-          <TimeLeft>{question.timeLeft}</TimeLeft>
+          <Name data-cy="name">{question.name}</Name>
+          <TimeLeft data-cy="time-left">{question.timeLeft}</TimeLeft>
         </div>
       </UserInfoContainer>
 
-      <Title>{question.title}</Title>
-      <Description $truncate={isTruncate}>{question.description}</Description>
+      <Title data-cy="title">{question.title}</Title>
+      <Description data-cy="description" $truncate={isTruncate}>
+        {question.description}
+      </Description>
     </QuestionContainer>
   );
 };

@@ -82,3 +82,12 @@ export const ListItem = styled.li`
     font-size: 1.2em;
   }
 `;
+
+export const SocialsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding: 124px 0;
+  gap: 20px;
+`;

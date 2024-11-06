@@ -3,7 +3,7 @@ import { LogoContainer } from './styles';
 
 const Logo = ({ onClick }) => {
   return (
-    <LogoContainer onClick={onClick}>
+    <LogoContainer onClick={onClick} data-cy={'logo'}>
       <img src={LogoImg} alt="Logo" />
       <p>BMWLovers</p>
     </LogoContainer>

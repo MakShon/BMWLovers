@@ -42,13 +42,19 @@ const CreateQuestion = () => {
   return (
     <ContentContainer>
       <CreateQuestionContainer>
-        <Input placeholder="Type catching attention title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <Input
+          placeholder="Type catching attention title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          data-cy={'title-input'}
+        />
         <StyledTextArea
           placeholder="Type your question"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          data-cy={'description-input'}
         />
-        <Button onClick={handlePublish}>
+        <Button onClick={handlePublish} data-cy={'publish-button'}>
           <FiSend size={17} />
           Publish
         </Button>

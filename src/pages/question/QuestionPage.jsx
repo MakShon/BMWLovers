@@ -51,7 +51,7 @@ const QuestionPage = () => {
 
   return (
     <ContentContainer>
-      <QuestionContainer>
+      <QuestionContainer data-cy={'question-container'}>
         <Question question={question} />
         <h1>Suggestions</h1>
         <CreateAnswer>
@@ -65,7 +65,7 @@ const QuestionPage = () => {
             <LuMessageSquare /> Suggest
           </Button>
         </CreateAnswer>
-        <ListContainer>
+        <ListContainer data-cy={'answers'}>
           {questionAnswers.map((answer) => (
             <Answer key={answer.id} answer={answer} />
           ))}

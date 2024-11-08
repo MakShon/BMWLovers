@@ -20,7 +20,7 @@ const Header = () => {
       <ButtonsContainer>
         {isAuth ? (
           <>
-            <Link to="/ask-a-question">
+            <Link to="/ask-a-question" data-cy={'ask-a-question'}>
               <Button>
                 <CiCirclePlus size={17} />
                 Ask a question
@@ -34,7 +34,7 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Link to="/sign-up">
+            <Link to="/sign-up" data-cy={'register'}>
               <Button>
                 <LuUserPlus2 size={17} />
                 Register

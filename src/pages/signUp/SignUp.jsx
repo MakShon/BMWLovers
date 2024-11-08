@@ -23,10 +23,30 @@ const SignUp = () => {
     <SignUpContainer>
       <SignUpForm>
         <h1>Create an Account</h1>
-        <Input onChange={(e) => setUsername(e.target.value)} value={username} type="username" placeholder="Username" />
-        <Input onChange={(e) => setEmail(e.target.value)} value={email} type="email" placeholder="Email" />
-        <Input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="Password" />
-        <Button onClick={handleSignUp}>Sign Up</Button>
+        <Input
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
+          type="username"
+          placeholder="Username"
+          data-cy={'sign-up-username'}
+        />
+        <Input
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          type="email"
+          placeholder="Email"
+          data-cy={'sign-up-email'}
+        />
+        <Input
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          type="password"
+          placeholder="Password"
+          data-cy={'sign-up-password'}
+        />
+        <Button onClick={handleSignUp} data-cy={'sign-up-button'}>
+          Sign Up
+        </Button>
       </SignUpForm>
       <img src={SignUpImage} alt="Sign Up" />
     </SignUpContainer>

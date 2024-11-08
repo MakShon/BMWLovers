@@ -19,9 +19,9 @@ const Home = () => {
     );
   }
   return (
-    <ListContainer>
+    <ListContainer data-cy={'list-container'}>
       {filteredQuestions.map((question) => (
-        <Link key={question.id} to={`/questions/${question.id}`}>
+        <Link key={question.id} to={`/questions/${question.id}`} data-cy={'question-card'}>
           <Question question={question} isTruncate />
         </Link>
       ))}

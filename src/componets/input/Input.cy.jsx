@@ -5,7 +5,9 @@ describe('Input Component', () => {
   const testValue = 'Hello World';
 
   it('renders correctly with given props', () => {
-    cy.mount(<Input type="text" placeholder={placeholderText} value={testValue} onChange={() => {}} />);
+    cy.mount(
+      <Input type="text" placeholder={placeholderText} value={testValue} onChange={() => {}} data-cy={'input'} />,
+    );
 
     cy.getByDataCy('input')
       .should('have.attr', 'type', 'text')
